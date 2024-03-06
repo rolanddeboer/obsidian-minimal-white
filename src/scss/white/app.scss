@@ -1,0 +1,52 @@
+// FILE editor
+.cm-editor .cm-content {
+  .cm-line:not(.HyperMD-codeblock, .HyperMD-list-line), .HyperMD-list-line span:not(.cm-formatting) {
+		text-align: justify;
+	}
+}
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-codeblock, .HyperMD-list-line, .Qliner, .Aliner, .Zliner, .ExtraLiner) {
+	margin: 10px 0 !important;
+}
+
+// FILE workspace
+.workspace-ribbon {
+	border: 0;
+	&.mod-left::before {
+		border: 0;
+	}
+}
+
+.workspace-ribbon.mod-left.is-collapsed {
+		background-color: var(--bg2);
+}
+
+.workspace-tab-header-container {
+	border: 0;
+	background-color: var(--bg2);
+}
+.workspace-leaf-resize-handle {
+	border-color: var(--bg2);
+}
+.mod-root {
+	.workspace-tab-header-container-inner {
+		padding-left: 25px;
+	}
+  .workspace-tabs .workspace-leaf {
+	  background-color: var(--bg2);
+  }
+}
+body:not(.is-mobile) .workspace-split.mod-root .view-content {
+	// background-color: yellowgreen;
+	border: 2px solid var(--divider-color);
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	background-color:var(--bg1);
+	margin-right: 40px;
+	width: auto;
+}
+// body.is-mobile .view-content {
+
+// }
+svg.daily-note * {
+	filter: brightness(0) saturate(100%) invert(60%) sepia(13%) saturate(741%) hue-rotate(4deg) brightness(85%) contrast(88%);
+}

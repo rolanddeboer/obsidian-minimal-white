@@ -1,0 +1,178 @@
+
+/* .oz-nav-file.is-active {
+  color: #95b84a;
+} */
+
+.oz-folder-contents {
+  // border-left: 2px dashed rgba(235, 219, 178, 0.15);
+  border: 0;
+}
+.is-folder-active {
+
+}
+.oz-folders-tree-wrapper {
+  padding-left: 0;
+}
+svg.oz-folder-toggle path {
+  fill: black !important;
+}
+.oz-icon-div {
+  padding-left:5px !important;
+
+}
+.workspace-split.mod-horizontal .treeview * {
+  /* background-color: transparent; */
+  /* background-color: var(--neutral-red) !important; */
+  color: black !important;
+  font-weight: 500;
+  color: #FFFFFF;
+  background: #FFFFFF;
+}
+.workspace-split.mod-horizontal .treeview {
+  border: 2px solid #201815;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+}
+.workspace-split.mod-horizontal .treeview:nth-of-type(6n+1) * {
+  background-color: var(--color-red) !important;
+  font-weight: 700;
+}
+.workspace-split.mod-horizontal .treeview:nth-of-type(6n+2) * {
+  background-color: var(--color-orange) !important;
+}
+.workspace-split.mod-horizontal .treeview:nth-of-type(6n+3) * {
+  background-color: var(--color-yellow) !important;
+}
+.workspace-split.mod-horizontal .treeview:nth-of-type(6n+4) * {
+  background-color: var(--color-green) !important;
+}
+.workspace-split.mod-horizontal .treeview:nth-of-type(6n+5) * {
+  background-color: var(--color-blue) !important;
+}
+.workspace-split.mod-horizontal .treeview:nth-of-type(6n+6) * {
+  background-color: var(--color-purple) !important;
+}
+.workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path*="1 - Inbox"]) * {
+  background-color: var(--color-red) !important;
+}
+.workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path*="2 - Journals"]) * {
+  background-color: var(--color-orange) !important;
+}
+.workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path*="3 - Projects"]) * {
+  background-color: var(--color-yellow) !important; 
+}
+// .oz-folder-contents .treeview:nth-of-type(6n+2) * {
+//   background-color: var(--color-orange) !important;
+// }
+// .oz-folder-contents .treeview:nth-of-type(6n+2) .oz-icon-div {
+//   background-image: -webkit-linear-gradient(left, var(--color-orange), rgba(var(--color-orange-rgb), 0));
+// }
+// .oz-folder-contents .treeview:nth-of-type(6n+3) .oz-icon-div {
+//   background-image: -webkit-linear-gradient(left, var(--color-yellow), rgba(var(--color-yellow-rgb), 0));
+// }
+// .oz-folder-contents .treeview:nth-of-type(6n+4) .oz-icon-div {
+//   background-image: -webkit-linear-gradient(left, var(--color-green), rgba(var(--color-green-rgb), 0));
+// }
+// .oz-folder-contents .treeview:nth-of-type(6n+5) .oz-icon-div {
+//   background-image: -webkit-linear-gradient(left, var(--color-blue), rgba(var(--color-blue-rgb), 0));
+// }
+// .oz-folder-contents .treeview:nth-of-type(6n+6) .oz-icon-div {
+//   background-image: -webkit-linear-gradient(left, var(--color-purple), rgba(var(--color-purple-rgb), 0));
+// }
+.workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path*="4 - Areas"]) * {
+  background-color: var(--color-green) !important;
+}
+.workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path*="5 - Reference"]) * {
+  background-color: var(--color-missing) !important;
+}
+.workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path*="6 - Resources"]) * {
+  background-color: var(--color-blue) !important;
+}
+.workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path*="7 - Archive"]) *, .workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path*="8 - Templates"]) *, .workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path="Files"]) *, .workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path*="0 - Metadata"]) * {
+  background-color: var(--color-purple) !important;
+}
+// .workspace-split.mod-horizontal .treeview:has(.oz-folder-element[data-path^="0 - Daily notes"]) * {
+//   background-color: var(--color-red) !important; 
+// }
+
+// .workspace-split.mod-horizontal .oz-folder-contents .treeview:nth-of-type(6n+1) {
+//   .oz-folder-line {
+//     * {
+//       background-color: transparent !important;
+//     }
+//     background-image: -webkit-linear-gradient(left, var(--color-red), rgba(var(--color-red-rgb), 0));
+//   }
+// }
+// .workspace-split.mod-horizontal .oz-folder-contents .treeview:nth-of-type(6n+2) {
+//   .oz-folder-line {
+//     * {
+//       background-color: transparent !important;
+//     }
+//     background-image: -webkit-linear-gradient(left, var(--color-orange), rgba(var(--color-orange-rgb), 0));
+//   }
+// }
+// .workspace-split.mod-horizontal .oz-folder-contents .treeview:nth-of-type(6n+3) {
+//   .oz-folder-line {
+//     * {
+//       background-color: transparent !important;
+//     }
+//     background-image: -webkit-linear-gradient(left, var(--color-yellow), rgba(var(--color-yellow-rgb), 0));
+//   }
+// }
+// .workspace-split.mod-horizontal .oz-folder-contents .treeview:nth-of-type(6n+4) {
+//   .oz-folder-line {
+//     * {
+//       background-color: transparent !important;
+//     }
+//     background-image: -webkit-linear-gradient(left, var(--color-green), rgba(var(--color-green-rgb), 0));
+//   }
+// }
+// .workspace-split.mod-horizontal .oz-folder-contents .treeview:nth-of-type(6n+5) {
+//   .oz-folder-line {
+//     * {
+//       background-color: transparent !important;
+//     }
+//     background-image: -webkit-linear-gradient(left, var(--color-blue), rgba(var(--color-blue-rgb), 0));
+//   }
+// }
+// .workspace-split.mod-horizontal .oz-folder-contents .treeview:nth-of-type(6n+6) {
+//   .oz-folder-line {
+//     * {
+//       background-color: transparent !important;
+//     }
+//     background-image: -webkit-linear-gradient(left, var(--color-red), rgba(var(--color-red-rgb), 0));
+//   }
+// }
+
+.workspace-split.mod-horizontal .treeview .is-folder-active {
+  text-shadow: #000 0px 0px 2px, #000 0px 0px 4px;
+  color: white !important;
+  text-shadow: 1px 1px 0 #0005, 1px -1px 0 #0005, -1px 1px 0 #0005, -1px -1px 0 #0005, 1px 0px 0 #0005, 0px 1px 0 #0005, -1px 0px 0 #0005, 0px -1px 0 #0005;
+  font-size: .9em;
+  font-weight: bold;
+}
+
+.treeview {
+  font-size:13px;
+  .is-folder-active {
+    font-size: 13.5px !important;
+  }
+}
+// .treeview:has(.is-root-folder) {
+//   display:none;
+// }
+.oz-icon-div {
+  font-size: 15px;
+}
+.oz-nav-file-tag {
+  font-size: 9px;
+}
+.oz-folder-element {
+  line-height:21px;
+}
+#file-tree-divider {
+  border: 0;
+}
+.oz-nav-file-title {
+  font-size: 13px !important;
+}

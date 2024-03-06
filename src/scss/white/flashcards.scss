@@ -1,0 +1,100 @@
+.Qliner.cm-line, .Aliner.cm-line, .Zliner.cm-line, .ExtraLiner.cm-line {
+  // background-color: rgba(0, 0, 0, 0.25) !important;
+  background-color: #1d1613 !important;
+  margin: 0 !important;
+  box-shadow: 15px 15px 9px 0px rgba(0,0,0,0.55);
+  border-left: 2px solid #98981a6b;
+  border-radius: 10px;
+}
+// body .markdown-source-view.mod-cm6 .cmline {
+//   &.Qliner, &.Aliner, &.Zliner, &.ExtraLiner {
+//     margin: 0 !important;
+//   }
+// }
+
+.Qliner.cm-line {
+  color: var(--color-text-blue);
+  padding: 15px 15px 10px 20px !important;
+  border-radius: 10px 10px 0 0;
+  clip-path: polygon(0 0, 110% 0, 100% 999%, 100% 120%, 100% 100%, 0 100%);
+}
+.Aliner.cm-line {
+  padding: 0 15px 15px 20px !important;
+  border-radius: 0 0 10px 10px;
+}
+.Zliner.cm-line {
+  padding: 15px 15px 15px 20px !important;
+}
+.Zliner .curly, .ExtraLiner .curly {
+  color: var(--color-text-blue);
+}
+// .cm-content .ExtraLiner.cm-line, .star.cm-line {
+//   padding: 10px 15px 15px 20px !important;
+//   margin-top: -15px !important;
+//   box-shadow: 30px 30px 30px 30px #1d1613 inset, 15px 15px 9px 0px rgba(0,0,0,0.55);
+// }
+.cm-content .star.cm-line {
+  //padding-top: 0 !important;
+}
+.Aliner, .Zliner, .Qliner, .ExtraLiner, .tagz, .curly, .star, .starnr, .commentz, .anki-tags, .timex, .anki-deck {
+  background-color: transparent !important;
+}
+.Aliner:not(.cm-line), .Zliner:not(.cm-line), .Qliner:not(.cm-line), .ExtraLiner:not(.cm-line) {
+  color: var(--text-normal);
+  opacity: .2;
+}
+.ExtraLiner:not(.cm-line) {
+  opacity: .1;
+  
+}
+.ExtraLiner.cm-line {
+  padding: 15px 15px 15px 20px !important;
+}
+.cm-content {
+  .Aliner + .ExtraLiner, .Zliner + .ExtraLiner, .Qliner + .ExtraLiner, .ExtraLiner + .ExtraLiner {
+    padding-top: 5px !important;
+    margin-top: -15px !important;
+    border-top-left-radius: 0;
+  }
+}
+// .ExtraLiner:not(.cm-line) {
+//   opacity: .20;
+// }
+
+// .star .list-bullet {
+//   margin-left: 10px;
+//   &::after {
+//     margin-left: 20px;
+//   }
+// }
+.ExtraLiner.cm-line {
+  .cm-formatting.cm-list-1:not(.cm-hashtag) {
+    margin-right:-10px;
+    margin-left:30px;
+  }
+}
+
+.list0-bullet::after {
+  margin-left: 20px;
+}
+.tagz {
+  opacity: .6;
+}
+.commentz {
+  position: absolute;
+  right: 0;
+  top: -5px;
+  opacity: .5;
+}
+.timex {
+  color: var(--color-green);
+  font-style: italic ;
+}
+.anki-deck.cm-line, .anki-tags.cm-line {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+  border-radius: 10px;
+  padding: 5px 10px !important;
+  color: #ebdbb279;
+  border: 1px solid var(--tag-border-color);
+  font-size: .8em;
+}

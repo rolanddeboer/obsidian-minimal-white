@@ -3,6 +3,7 @@
 @import 'variables/dynamic-color';
 @import 'variables/theme';
 @import 'variables/adaptive-font-size';
+@import 'white/variables';
 
 /* Obsidian */
 @import 'dev/dev-block-width';
@@ -16,6 +17,7 @@
 @import 'app/title-bar';
 @import 'app/window-frame';
 @import 'app/workspace';
+@import 'white/app';
 
 /* Components */
 @import 'components/buttons';
@@ -67,6 +69,7 @@
 @import 'features/underline-headings';
 
 @import 'mobile/mobile';
+@import 'white/mobile';
 
 /* Mobile
 @import 'mobile/mobile';
@@ -123,10 +126,17 @@
 @import 'color-schemes/dracula';
 @import 'color-schemes/eink';
 @import 'color-schemes/everforest';
-@import 'color-schemes/gruvbox';
 @import 'color-schemes/macos';
 @import 'color-schemes/nord';
 @import 'color-schemes/notion';
 @import 'color-schemes/rose-pine';
 @import 'color-schemes/solarized';
 @import 'color-schemes/things';
+@import 'white/color-schemes';
+
+// New files by White
+@import 'white/flashcards';
+@import 'white/main';
+@import 'white/file-tree';
+@import 'white/tasks';
+// @import 'white/colored-folders';
