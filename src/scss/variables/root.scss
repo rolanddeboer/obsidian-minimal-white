@@ -1,9 +1,11 @@
 body {
 	--font-editor-theme:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Ubuntu,sans-serif;
 	--font-editor:var(--font-editor-override), var(--font-text-override), var(--font-editor-theme);
-}
 
-body {
+	/* Bases */
+	--bases-table-column-border-width: 0px;
+    --bases-header-border-width: 0;
+
 	/* Blockquotes */
 	--blockquote-style:normal;
 	--blockquote-color: var(--text-muted);
@@ -18,8 +20,6 @@ body {
 
 	/* Font weights */
 	--normal-weight: 400;
-	--bold-weight: 600;
-	--link-weight: inherit;
 
 	/* Headings */
 	--inline-title-margin-bottom: 1rem;
@@ -55,6 +55,7 @@ body {
 	/* Line widths */
 	--line-width: 40rem;
 	--line-height: 1.5;
+	--line-height-normal: var(--line-height);
 	--max-width: 88%;
 	--max-col-width: 18em;
 
@@ -74,6 +75,8 @@ body {
 	--header-height: 40px;
 
 	/* Metadata */
+	--metadata-label-width-multiplier: 9;
+	--metadata-label-width: calc(var(--font-adaptive-small) * var(--metadata-label-width-multiplier));
 	--metadata-label-font-size: var(--font-adaptive-small);
 	--metadata-input-font-size: var(--font-adaptive-small);
 
@@ -85,7 +88,7 @@ body {
 
 	/* Image opacity in dark mode */
 	--image-muted:0.7;
-	--image-radius: 0;
+	--image-radius: 4px;
 
 	/* Spacing */
 	--heading-spacing: 2em;
@@ -94,12 +97,26 @@ body {
 	--border-width: 1px;
 	--table-border-width: var(--border-width);
 
+	--table-selection: var(--text-selection);
+	--table-selection-border-color: var(--text-accent);
+	--table-selection-border-width: 0px;
+	--table-selection-border-radius: 0px;
+	--table-drag-handle-background-active: var(--text-selection);
+	--table-drag-handle-color-active: var(--text-accent);
+	--table-add-button-border-width: 0px;
+
 	/* Readable line length off */
-	--file-margins: var(--size-4-2) var(--size-4-12);
+	--file-margins-y: var(--size-4-2);
 }
 
 .mod-macos {
 	--top-left-padding-y:24px;
+}
+
+.is-phone {
+	/* Metadata */
+	--metadata-label-font-size: var(--font-adaptive-smaller);
+	--metadata-input-font-size: var(--font-adaptive-smaller);
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {

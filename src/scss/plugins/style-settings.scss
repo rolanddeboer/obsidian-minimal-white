@@ -34,6 +34,7 @@
 	.setting-item {
 		max-width:100%;
 		margin:0 auto;
+		border: none;
 	}
 	.setting-item-name {
 		position:relative;
@@ -53,6 +54,11 @@
 	height:24px;
 	width:24px;
 }
+.style-settings-container {
+	.setting-item {
+		background-color: transparent;
+	}
+}
 .setting-item {
 	.pickr .pcr-button:after,
 	.pickr .pcr-button:before {
@@ -67,6 +73,7 @@
 		border:0;
 		padding:10px 0 5px;
 		margin-bottom:0;
+		border-radius:0;
 	}
 
 	.style-settings-import,
@@ -118,7 +125,7 @@
 		.setting-item-name {
 			font-size: var(--font-adaptive-small);
 		}
-		.setting-item-info:has(.search-input-container) {
+		.view-content > .setting-item > .setting-item-info:first-child {
 			width: 100%;
 			margin-right: 0;
 		}

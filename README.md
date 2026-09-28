@@ -2,11 +2,7 @@
 
 Find detailed documentation at [minimal.guide](https://minimal.guide)
 
-Minimal is an [Obsidian](https://obsidian.md/) theme for desktop, mobile and tablet. Customize colors, fonts and more with the companion plugins [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings) and [Hider](https://github.com/kepano/obsidian-hider). Winner of Obsidian's official [Best Theme award](https://forum.obsidian.md/t/best-of-2020-awards-results/11217) ✨ 
-
-Support development: **@kepano** on [Twitter](https://www.twitter.com/kepano) or [Buy me a coffee](https://www.buymeacoffee.com/kepano)
-
-<a href="https://www.buymeacoffee.com/kepano"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kepano&button_colour=6a8695&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
+Minimal is an [Obsidian](https://obsidian.md/) theme for desktop, mobile and tablet. Customize colors, fonts and more with the companion plugins [Minimal Theme Settings](https://community.obsidian.md/plugins/obsidian-minimal-settings) and [Hider](https://community.obsidian.md/plugins/obsidian-hider). Winner of Obsidian's official [Best Theme award](https://forum.obsidian.md/t/best-of-2020-awards-results/11217) ✨ 
 
 ## About Minimal
 
@@ -28,19 +24,19 @@ Support development: **@kepano** on [Twitter](https://www.twitter.com/kepano) or
 
 **Background styles** include low contrast, high contrast, and a true black option ideal for OLED devices
 
-![](/assets/minimal-variants.png)
+![](/docs/Images/minimal-variants.png)
 
 **Helper classes** for tables and card layouts allow you to create powerful workflows
 
-![](/assets/minimal-movies.png)
+![](/docs/Images/minimal-movies.png)
 
 Combining **focus mode** with **image grid** and **image width** options allows you to immerse yourself in visual projects
 
-![](/assets/minimal-img-grid.png)
+![](/docs/Images/minimal-img-grid.png)
 
-Minimal includes support for dozens of popular plugins like **Calendar**, **Kanban**, **Dataview**, **Outliner**, **Excalidraw**, [and more](#plugin-support)
+Minimal includes support for popular plugins like **Calendar**, **Dataview**, **Kanban**, **Outliner**, [and more](#plugin-support)
 
-![](/assets/minimal-plugins.png)
+![](/docs/Images/minimal-plugins.png)
 
 ## Installation
 
@@ -52,8 +48,8 @@ To install the theme
 
 To install the companion plugin
 
-- Go to `Community plugins` and turn off `Safe mode`
-- Under community themes search for "Minimal Theme Settings" and click `Install`, then `Enable`
+- Go to `Community plugins` and turn off `Restricted mode`
+- Under community plugins search for "Minimal Theme Settings" and click `Install`, then `Enable`
 
 Have a question? Join the [Minimal channel](https://discord.com/channels/686053708261228577/931008597557649410) on the official [Obsidian Discord](https://discord.gg/veuWUTm).
 
@@ -97,13 +93,13 @@ Controls images, tables and iframes. These settings can also be enabled on a per
 
 Minimal offers color schemes that can be separately selected for light and dark mode using the [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings) plugin. Color schemes include Dracula, Everforest, Gruvbox, macOS, Nord, Notion, Solarized, and Things. 
 
-![Minimal Theme Settings](/assets/minimal-color-schemes.gif)
+![Minimal Theme Settings](/docs/Images/minimal-color-schemes.gif)
 
 ### Custom color schemes
 
 You can use the Style Settings plugin to customize your color scheme. To see your changes more easily, open Style Settings in a new pane by using the command palette (`CMD + P` by default). Using Style Settings you can customize Minimal's colors, font sizes, font styles, and many more details.
 
-![Style Settings](/assets/minimal-style-settings.gif)
+![Style Settings](/docs/Images/minimal-style-settings.gif)
 
 ## Plugin support
 
@@ -118,10 +114,8 @@ Most plugins work well with Minimal, but the following plugins have received spe
 - [Git](https://github.com/denolehov/obsidian-git)
 - [Hider](https://github.com/kepano/obsidian-hider)
 - [Kanban](https://github.com/mgmeyers/obsidian-kanban)
-- [Leaflet](https://github.com/valentine195/obsidian-leaflet-plugin) for maps
 - [Outliner](https://github.com/vslinko/obsidian-outliner)
 - [QuickAdd](https://github.com/chhoumann/quickadd)
-- [Sortable](https://github.com/alexandru-dinu/obsidian-sortable) — recommended for cards and tables
 
 ## Helper filters and classes
 
@@ -165,7 +159,7 @@ Controls the width of elements by type. [Learn more.](https://github.com/kepano/
 
 ### Cards
 
-Using `cards` transforms Dataview tables into cards that can be sorted using the [Sortable plugin](https://github.com/alexandru-dinu/obsidian-sortable). Compatible with table width classes.  Note that `cards` must be present for the other classes to work. [Learn more.]([url](https://minimal.guide/Block+types/Cards))
+Using `cards` transforms Dataview tables into cards. Compatible with table width classes.  Note that `cards` must be present for the other classes to work. [Learn more.]([url](https://minimal.guide/Block+types/Cards))
 
 | Class                 | Description                                      |
 | :-------------------- | :----------------------------------------------- |
@@ -271,8 +265,6 @@ Plugin authors and developers can add support for Minimal theme by submitting a 
 **Set up**
 
 ```
-sudo gem install sass
-npm install -g grunt-cli
 npm install
 ```
 
@@ -283,10 +275,11 @@ To build directly into your Obsidian vault rename `.env.example` to `.env` and u
 **To run**
 
 ```
-npx grunt
+npm run dev    # watch and rebuild on changes
+npm run build  # one-off build
 ```
 
-This builds two files, the `obsidian.css` distribution file (for the community themes store) which is minified and also copied to your vault for live reload, and the `Minimal.css` file which is an unminified copy saved to the project root.
+This builds two files: `theme.css`, the minified distribution file (for the community themes store) which is also copied to your vault for live reload, and `Minimal.css`, an unminified copy saved to the project root.
 
 ## License
 
@@ -300,10 +293,12 @@ Minimal is frequently updated to stay current with the latest version of Obsidia
 
 ### Minimal for Obsidian Publish
 
-Minimal for Obsidian Publish is a separate version of Minimal which follows the same design principles but is optimized for web. Licensing Minimal for web-based publishing requires a paid license. Licenses are not yet available, but you can test Minimal for Obsidian Publish on [the Minimal site](https://minimal.guide/Home).
+Minimal for Obsidian Publish is a separate version of Minimal which follows the same design principles but is optimized for web. It is also MIT licensed and available at [minimal.guide](https://minimal.guide/publish/download) or the [obsidian-minimal-publish](https://github.com/kepano/obsidian-minimal-publish) repo.
 
 ## Disclaimer
 
 This theme is provided as is, and is designed for my personal use of Obsidian on macOS. As such it is not thoroughly tested across all operating systems and use cases. 
 
 This theme modifies significant parts of the Obsidian interface, so it may break with future updates. It may also be incompatible with other bits of custom CSS you have.
+
+
