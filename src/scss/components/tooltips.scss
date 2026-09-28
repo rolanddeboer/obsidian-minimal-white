@@ -4,11 +4,7 @@
 	transition: none;
 	animation: none;
 }
-.tooltip.mod-left,
-.tooltip.mod-right {
-	transform:none;
+.tooltip.mod-primary,
+.tooltip.mod-secondary {
 	animation:none; 
-}
-.tooltip.mod-error {
-	color: var(--text-error);
 }

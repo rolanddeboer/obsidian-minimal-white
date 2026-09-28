@@ -4,6 +4,7 @@ body {
 		calc(50% - var(--line-width)/2),
 		calc(50% - var(--max-width)/2) );
 	--content-line-width: min(var(--line-width), var(--max-width));
+	--map-header-padding: 2px;	
 }
 
 /* Line widths ------------------------------------ */
@@ -53,12 +54,25 @@ body {
 .minimal-line-nums .workspace-leaf-content[data-type=markdown] {
 	--file-margins: var(--size-4-8) var(--size-4-8) var(--size-4-8) 48px;
 	&.is-rtl {
-			--file-margins: var(--size-4-8) 48px var(--size-4-8) var(--size-4-8);}
+		--file-margins: var(--size-4-8) 48px var(--size-4-8) var(--size-4-8);}
 	.is-readable-line-width {
 		--file-margins: 1rem 0 0 var(--folding-offset);
 		&.is-rtl {
 			--file-margins: 1rem var(--folding-offset) 0 0;}
 	}
+}
+
+.minimal-line-nums .mod-secondary-split,
+.minimal-line-nums .mod-primary-split {
+	.markdown-preview-view,
+	.markdown-source-view.mod-cm6 .cm-scroller {
+		--file-margins: var(--size-4-5) var(--size-4-5) var(--size-4-5) 48px;
+	}
+}
+
+.view-content .reader-mode-content.is-readable-line-width .markdown-preview-sizer {
+	max-width: var(--max-width);
+	width: var(--line-width);
 }
 
 /* Embeds ------------------------------------ */
@@ -77,11 +91,13 @@ body {
 */
 
 body {
-	--container-table-width: var(--line-width);
 	--container-table-max-width: var(--max-width);
 	--table-max-width: none;
 	--table-width: auto;
 	--table-margin: inherit;
+	--table-wrapper-width: fit-content;
+
+	--container-dataview-table-width: var(--line-width);
 
 	--container-img-width: var(--line-width);
 	--container-img-max-width: var(--max-width);
@@ -111,6 +127,7 @@ body {
 	.wide {
 		--line-width: var(--line-width-wide);
 		--container-table-width: var(--line-width-wide);
+		--container-dataview-table-width: var(--line-width-wide);
 		--container-img-width: var(--line-width-wide);
 		--container-iframe-width: var(--line-width-wide);
 		--container-map-width: var(--line-width-wide);
@@ -119,6 +136,7 @@ body {
 	.max {
 		--line-width: var(--max-width);
 		--container-table-width: var(--max-width);
+		--container-dataview-table-width: var(--max-width);
 		--container-img-width: var(--max-width);
 		--container-iframe-width: var(--max-width);
 		--container-map-width: var(--max-width);
@@ -135,12 +153,28 @@ table.dataview {
 	--table-min-width: none;
 }
 
+body {
+	--table-drag-space: 16px;
+	--container-table-margin: calc(var(--content-margin-start) - var(--table-drag-space));
+	--container-table-width: calc(var(--line-width) + var(--table-drag-space)*2);
+	--table-drag-padding: var(--table-drag-space);
+}
+.is-mobile {
+	--table-drag-space: 16px;
+	--container-table-max-width: calc(100% - var(--container-table-margin));
+}
+
 .maximize-tables-auto {
 	--container-table-max-width: 100%;
 	--container-table-width: 100%;
+	--container-dataview-table-width: 100%;
+	--container-table-margin: 0;
+	--table-drag-padding: var(--table-drag-space) 0;
+
 	--table-max-width: 100%;
 	--table-margin: var(--content-margin-start) auto;
 	--table-width: auto;
+
 	.cards {
 		--container-table-max-width: var(--max-width);
 	}
@@ -152,35 +186,70 @@ table.dataview {
 .maximize-tables {
 	--container-table-max-width: 100%;
 	--container-table-width: 100%;
+	--container-table-margin: 0;
+	--table-drag-padding: var(--table-drag-space) 0;
+
 	--table-min-width: min(var(--line-width), var(--max-width));
 	--table-max-width: 100%;
 	--table-margin: auto;
 	--table-width: auto;
-	--table-edge-cell-padding-first: 10px;
-}
+	--table-edge-cell-padding-first: 8px;
+	--table-edge-cell-padding-last: 8px;
 
+	--table-wrapper-width: auto;
+}
 
 .table-wide,
 .table-max,
 .table-100 {
 	--table-max-width: 100%;
-	--table-width: 100%;}
+	--table-width: 100%;
+}
 .table-wide {
 	--container-table-width: var(--line-width-wide);
+	--container-dataview-table-width: var(--line-width-wide);
+	--container-table-margin: auto;
 	--table-edge-cell-padding-first: 0px;}
 .table-max {
 	--container-table-width: var(--max-width);
+	--container-table-max-width: calc(var(--max-width) + var(--table-drag-space)*2);
+	--container-dataview-table-width: var(--max-width);
+	--container-table-margin: auto;
 	--table-edge-cell-padding-first: 0px;
 	--table-margin: 0;}
 .table-100 {
 	--container-table-width: 100%;
+	--container-dataview-table-width: 100%;
 	--container-table-max-width: 100%;
-	--table-edge-cell-padding-first: 20px;
+	--container-table-margin: 0;
+	--table-edge-cell-padding-first: 16px;
+	--table-edge-cell-padding-last: 16px;
 	--table-margin: 0;
-	.dataview.list-view-ul {
-		max-width: var(--max-width);
-		width: var(--line-width);
-		margin-inline: auto;
+	--table-drag-padding: var(--table-drag-space) 0;
+	--table-wrapper-width: min(fit-content, 100%);
+	--bases-cards-embed-padding: 0 12px;
+	--bases-header-padding-end: var(--size-4-2);
+	--bases-header-padding-start: var(--size-4-2);
+
+	.bases-view[data-view-type="table"] {
+		--bases-embed-border-width: 0;
+		--bases-embed-border-radius: 0;
+	}
+
+	.table-col-btn {
+		cursor: default !important;
+		margin-top: 8px;
+		height: var(--table-header-size);
+		inset-inline-start: calc(100% - var(--table-drag-handle-size) - 4px) !important;
+	}
+
+	// Place drag handles inside the cell when width is 100%
+	.markdown-source-view.mod-cm6,
+	&.markdown-source-view.mod-cm6 {
+		--table-drag-handle-background-active: transparent;
+		.cm-table-widget .table-row-drag-handle {
+			inset-inline-end: calc(100% - var(--table-drag-handle-size)) !important;
+		}
 	}
 }
 
@@ -214,7 +283,12 @@ table.dataview {
 	--container-map-width: var(--max-width);}
 .map-100 {
 	--container-map-width: 100%;
-	--container-map-max-width: 100%;}
+	--container-map-max-width: 100%;
+	--map-header-padding: var(--size-4-2);
+	.bases-view[data-view-type="map"] {
+		--bases-embed-border-radius: 0;
+	}
+}
 
 .chart-wide,
 .chart-max,
@@ -246,21 +320,34 @@ table.dataview {
 /* Block widths ------------------------------------
 
    Because we are using :has() this method requires
-   Obsidian installer 1.1.9 or above. However it means the
-   code no longer requires Contextual Typography plugin.
+   Obsidian installer 1.1.9 or above.
 */
 
 .markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer.cm-contentContainer>.cm-content,
 .markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
 
-	/* Tables */
+	// Tables
 	.cm-table-widget,
-	> div:has(>table),
-	> div:has(>.block-language-dataview>table),
-	> div:has(>.block-language-dataviewjs) {
+	> div:has(table) {
 		width: var(--container-table-width);
 		max-width:var(--container-table-max-width);
+		margin-inline: var(--container-table-margin) !important;
+		padding-inline-start: var(--table-drag-padding);
 	}
+	.el-table {
+		margin-inline: var(--container-table-margin) !important;
+		padding-inline-start: var(--table-drag-padding);
+	}
+	.table-wrapper {
+		width: var(--table-wrapper-width);
+	}
+	> .bases-embed,
+	> div:has(:is(.block-language-base, .bases-embed)),
+	> :has(> :is(.block-language-dataview, .block-language-dataviewjs) table) {
+		width: var(--container-dataview-table-width);
+		max-width:var(--container-table-max-width);
+	}
+
 	table {
 		width: var(--table-width);
 		max-width:var(--table-max-width);
@@ -270,6 +357,7 @@ table.dataview {
 	.block-language-dataviewjs {
 		> :is(p,h1,h2,h3,h4,h5,h6) {
 			width: var(--line-width);
+			margin-inline: var(--content-margin);
 		}
 		> .dataview-error {
 			margin: 0 auto;
@@ -280,7 +368,7 @@ table.dataview {
 		margin-inline: var(--table-margin);
 	}
 
-	/* Images */
+	// Images
 	> .image-embed {
 		padding-top: 0.25rem;
 		padding-bottom: 0.25rem;
@@ -295,42 +383,41 @@ table.dataview {
 		}
 	}
 
-	/* External images */
+	// External images
 	> img {
 		max-width: var(--img-line-width);
 		margin-inline-start: var(--img-margin-start) !important;
 	}
 
-	/* Charts */
-	div:has(>.block-language-dataviewjs canvas), 
-	div:has(>.block-language-chart) {
+	// Charts
+	div:has(>.block-language-dataviewjs canvas, >.block-language-chart) {
 		width: var(--container-chart-width);
 		max-width:var(--container-chart-max-width);
 
 		canvas {
-			max-width:var(--map-chart-width);
+			max-width:var(--chart-max-width);
 		}
 	}
 
-	/* Maps */
-	div:has(>.block-language-leaflet) {
+	// Maps
+	div:has(.bases-view[data-view-type="map"]) {
 		width: var(--container-map-width);
 		max-width:var(--container-map-max-width);
+		--bases-header-padding-end: var(--map-header-padding);
+		--bases-header-padding-start: var(--map-header-padding);
 
 		iframe {
 			max-width:var(--map-max-width);
 		}
 	}
 
-	/* Iframes */
-	> div:has(>iframe),
-	div:has(>.cm-html-embed) {
+	// Iframes
+	> div:has(> :is(iframe, .cm-html-embed)) {
 		width: var(--container-iframe-width);
 		max-width:var(--container-iframe-max-width);
 
 		iframe {
 			max-width:var(--iframe-max-width);
-			width: var(--iframe-width);
 		}
 	}
 
