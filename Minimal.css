@@ -1003,7 +1003,7 @@ body.is-focused {
   text-align: justify; }
 
 .markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-codeblock, .HyperMD-list-line, .Qliner, .Aliner, .Zliner, .ExtraLiner) {
-  margin: 10px 0 !important; }
+  padding: 5px 0; }
 
 .workspace-ribbon {
   border: 0; }
